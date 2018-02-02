@@ -24,8 +24,9 @@ drawQrcode({
 ```
 
 如果项目使用了 wepy 框架，可直接安装 `weapp-qrcode` npm包。
+
 ```
-npm install weapp-qrcode --save-dev
+npm install weapp-qrcode --save
 ```
 
 ```js
@@ -58,7 +59,7 @@ Type: Object
 | canvasId | 必须，绘制的`canvasId` | 'myQrcode' |
 | text | 必须，二维码内容 | 'myQrcode' |
 | typeNumber | 非必须，二维码的计算模式，默认值-1 | 8 |
-| correctLevel | 非必须，二维码纠错级别，默认值为高级，取值范围: `{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
+| correctLevel | 非必须，二维码纠错级别，默认值为高级，取值：`{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
 | background | 非必须，二维码背景颜色，默认值白色 | '#ffffff' |
 | foreground | 非必须，二维码前景色，默认值黑色 | '#000000' |
 
