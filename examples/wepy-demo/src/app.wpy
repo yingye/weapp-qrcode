@@ -1,0 +1,28 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index'
+    ],
+    window: {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#262930",
+      "navigationBarTitleText": "二维码生成工具",
+      "navigationBarTextStyle": "white"
+    }
+  }
+}
+</script>

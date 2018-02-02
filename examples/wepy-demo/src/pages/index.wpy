@@ -1,0 +1,170 @@
+<template>
+  <view class="container">
+    <view class="main">
+      <view class="qrcode item">
+        <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+        <view class="tips">{{text}}</view>
+      </view>
+      <view class="input-container item">
+        <input bindinput="bindKeyInput" placeholder="输入转换内容"/>
+        <button type="default" size="{{defaultSize}}" bindtap="changeText">提交</button>
+      </view>
+      <view class="round left"></view>
+      <view class="round right"></view>
+      <view class="intro item">
+        <view class="title">说明：</view>
+        <view>1. 可自定义canvas宽高。</view>
+        <view>2. 支持修改二维码的计算模式、纠错级别、背景色、前景色。</view>
+        <view>3. 更多详细说明，请参考项目README。</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import drawQrcode from 'weapp-qrcode'
+
+  export default class Index extends wepy.page {
+    data = {
+      text: 'https://m.baidu.com',
+      inputValue: ''
+    }
+
+    methods = {
+      changeText(text) {
+        if (!this.data.inputValue) {
+          wepy.showModal({
+            title: '提示',
+            content: '请先输入要转换的内容！',
+            showCancel: false
+          })
+          return
+        }
+        this.text = this.data.inputValue
+        this.draw()
+      },
+      bindKeyInput(e) {
+        this.inputValue = e.detail.value
+      }
+    }
+
+    onLoad() {
+      this.draw()
+    }
+
+    draw() {
+      drawQrcode({
+        width: 200,
+        height: 200,
+        canvasId: 'myQrcode',
+        typeNumber: 6,
+        text: this.text
+      })
+    }
+  }
+</script>
+
+<style>
+Page {
+  background-color: #383c42;
+}
+.main {
+  width: 670rpx;
+  margin: 40rpx auto 0;
+  background: #fff;
+  box-shadow: 0 0 2rpx 0 rgba(25, 29, 33, 0.15);
+  border-radius: 12rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.item {
+  border-bottom: 2rpx solid #F4F5F7;
+}
+.qrcode {
+  width: 590rpx;
+  margin: 0 auto;
+  padding: 50rpx 0 59rpx;
+  border-top: 2rpx solid #F4F5F7;
+}
+.qrcode > view, .qrcode > text {
+  text-align: center;
+}
+canvas {
+  margin: 58rpx auto 0;
+}
+.type {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #585C64;
+  line-height: 32rpx;
+}
+.tips {
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #999BA1;
+  line-height: 28rpx;
+}
+.input-container {
+  padding: 10rpx 0 0 0;
+  width: 590rpx;
+  margin: 0 auto;
+  height: 102rpx;
+}
+.input-container > input {
+  display: inline-block;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #191D21;
+  line-height: 102rpx;
+  width: 450rpx;
+}
+.input-container > button {
+  width: 120rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  float: right;
+  margin-top: 10rpx;
+}
+.arrow {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: top;
+  margin-top: 36rpx;
+  float: right;
+}
+.round {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: #383c42;
+  position: absolute;
+  top: 735rpx;
+}
+.left {
+  left: -12rpx;
+}
+.right {
+  right: -12rpx;
+}
+.intro {
+  width: 590rpx;
+  margin-top: 20rpx;
+}
+.intro > view{
+  color: #999BA1;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  word-wrap: break-word;
+  margin-bottom: 8rpx;
+}
+.intro > .title {
+  font-size: 32rpx;
+  color: #191D21;
+  line-height: 50rpx;
+}
+
+</style>
