@@ -57,7 +57,7 @@ Type: Object
 | width | 必须，二维码宽度，与`canvas`的`width`保持一致 | 200 |
 | height | 必须，二维码高度，与`canvas`的`height`保持一致 | 200 |
 | canvasId | 必须，绘制的`canvasId` | 'myQrcode' |
-| text | 必须，二维码内容 | 'myQrcode' |
+| text | 必须，二维码内容 | 'https://github.com/yingye' |
 | typeNumber | 非必须，二维码的计算模式，默认值-1 | 8 |
 | correctLevel | 非必须，二维码纠错级别，默认值为高级，取值：`{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
 | background | 非必须，二维码背景颜色，默认值白色 | '#ffffff' |
