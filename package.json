@@ -1,6 +1,6 @@
 {
   "name": "weapp-qrcode",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "generate qrcode in weapp",
   "main": "dist/weapp.qrcode.min.js",
   "scripts": {

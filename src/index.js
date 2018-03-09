@@ -1,6 +1,7 @@
 import { QRCode, QRErrorCorrectLevel } from './qrcode'
 
-function drawQrcode (options = {}) {
+function drawQrcode (options) {
+  options = options || {}
   options = Object.assign({
     width: 256,
     height: 256,
