@@ -18,10 +18,10 @@ export default class extends wepy.app {
       'pages/index'
     ],
     window: {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#262930",
-      "navigationBarTitleText": "二维码生成工具",
-      "navigationBarTextStyle": "white"
+      'backgroundTextStyle': 'light',
+      'navigationBarBackgroundColor': '#262930',
+      'navigationBarTitleText': '二维码生成工具',
+      'navigationBarTextStyle': 'white'
     }
   }
 }
