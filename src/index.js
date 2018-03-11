@@ -27,6 +27,8 @@ function drawQrcode (options) {
     // get canvas context
     var ctx = wx.createCanvasContext && wx.createCanvasContext(options.canvasId)
 
+    console.log('ctx', ctx)
+
     // compute tileW/tileH based on options.width/options.height
     var tileW = options.width / qrcode.getModuleCount()
     var tileH = options.height / qrcode.getModuleCount()

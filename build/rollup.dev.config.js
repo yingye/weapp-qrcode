@@ -12,7 +12,8 @@ module.exports = {
   input: path.resolve(__dirname, '../src/index.js'),
   output: {
     file: path.resolve(__dirname, '../dist/weapp.qrcode.js'),
-    format: 'umd'
+    format: 'umd',
+    banner: '// weapp.qrcode.js v' + pkg.version + ' (' + pkg.homepage + ')'
   },
   moduleName: 'umd',
   sourcemap: 'inline',

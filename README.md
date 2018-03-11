@@ -9,7 +9,7 @@ weapp.qrcode.js 在 微信小程序 中，快速生成二维码
 <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
 ```
 
-直接引入 js 文件，使用 `drawQrcode()` 绘制二维码。
+直接引入 js 文件，使用 `drawQrcode()` 绘制二维码。!!!在 调用 `drawQrcode()` 方法之前，一定要确保可以获取到 `canvas context` 。
 
 ```js
 // 将 dist 目录下，weapp.qrcode.min.js 复制到项目目录中
