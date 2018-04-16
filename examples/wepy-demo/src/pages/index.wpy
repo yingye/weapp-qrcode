@@ -23,7 +23,8 @@
 
 <script>
   import wepy from 'wepy'
-  import drawQrcode from 'weapp-qrcode'
+  // import drawQrcode from 'weapp-qrcode'
+  let drawQrcode = require('weapp-qrcode')
 
   export default class Index extends wepy.page {
     data = {
