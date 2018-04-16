@@ -2,6 +2,10 @@
 
 Change log for weapp-qrcode. [Details at Github](https://github.com/yingye/weapp-qrcode)
 
+## [0.6.0] - 2018-04-16
+
+- Add multi-output.
+
 ## [0.5.0] - 2018-03-11
 
 - Add version in weapp.qrcode.js.

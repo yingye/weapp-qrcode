@@ -14,7 +14,7 @@ module.exports = {
     file: path.resolve(__dirname, '../dist/weapp.qrcode.js'),
     format: 'umd'
   },
-  moduleName: 'umd',
+  moduleName: 'drawQrcode',
   plugins: [
     eslint(),
     resolve({

@@ -1,11 +1,11 @@
 /**
- * weapp.qrcode.js v0.5.0 (https://github.com/yingye/weapp-qrcode#readme)
+ * weapp.qrcode.js v0.6.0 (https://github.com/yingye/weapp-qrcode#readme)
  */
 
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global.umd = factory());
+	(global.drawQrcode = factory());
 }(this, (function () { 'use strict';
 
 //---------------------------------------------------------------------

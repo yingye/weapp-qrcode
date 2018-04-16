@@ -11,11 +11,21 @@ var pkg = require('../package.json')
 
 module.exports = {
   input: path.resolve(__dirname, '../src/index.js'),
-  output: {
-    file: path.resolve(__dirname, '../dist/weapp.qrcode.min.js'),
-    format: 'umd'
-  },
-  moduleName: 'umd',
+  output: [
+    {
+      file: path.resolve(__dirname, '../dist/weapp.qrcode.min.js'),
+      format: 'umd'
+    },
+    {
+      file: path.resolve(__dirname, '../dist/weapp.qrcode.common.js'),
+      format: 'cjs'
+    },
+    {
+      file: path.resolve(__dirname, '../dist/weapp.qrcode.esm.js'),
+      format: 'es'
+    }
+  ],
+  moduleName: 'drawQrcode',
   plugins: [
     eslint(),
     resolve({
@@ -33,7 +43,7 @@ module.exports = {
       }  
     }),
     license({
-      banner: 'weapp.qrcode.min.js v' + pkg.version + ' (' + pkg.homepage + ')'
+      banner: 'weapp.qrcode.js v' + pkg.version + ' (' + pkg.homepage + ')'
     })
   ]
 }
