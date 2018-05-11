@@ -2,6 +2,10 @@
 
 Change log for weapp-qrcode. [Details at Github](https://github.com/yingye/weapp-qrcode)
 
+## [0.7.0] - 2018-05-11
+
+- 支持在小程序组件中绘制二维码.
+
 ## [0.6.0] - 2018-04-16
 
 - Add multi-output.

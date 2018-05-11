@@ -1,0 +1,4 @@
+<view class="container">
+  <component-qrcode isDraw="{{isDraw}}"></component-qrcode>
+  <button bindtap="draw">Draw</button>
+</view>

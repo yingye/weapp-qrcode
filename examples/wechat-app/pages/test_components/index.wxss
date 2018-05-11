@@ -1,0 +1,100 @@
+Page {
+  background-color: #383c42;
+}
+.main {
+  width: 670rpx;
+  margin: 40rpx auto 0;
+  background: #fff;
+  box-shadow: 0 0 2rpx 0 rgba(25, 29, 33, 0.15);
+  border-radius: 12rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.item {
+  border-bottom: 2rpx solid #F4F5F7;
+}
+.qrcode {
+  width: 590rpx;
+  margin: 0 auto;
+  padding: 50rpx 0 59rpx;
+  border-top: 2rpx solid #F4F5F7;
+}
+.qrcode > view, .qrcode > text {
+  text-align: center;
+}
+canvas {
+  margin: 58rpx auto 0;
+}
+.type {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #585C64;
+  line-height: 32rpx;
+}
+.tips {
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #999BA1;
+  line-height: 28rpx;
+}
+.input-container {
+  padding: 10rpx 0 0 0;
+  width: 590rpx;
+  margin: 0 auto;
+  height: 102rpx;
+}
+.input-container > input {
+  display: inline-block;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #191D21;
+  line-height: 102rpx;
+  width: 450rpx;
+}
+.input-container > button {
+  width: 120rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  float: right;
+  margin-top: 10rpx;
+}
+.arrow {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: top;
+  margin-top: 36rpx;
+  float: right;
+}
+.round {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: #383c42;
+  position: absolute;
+  top: 735rpx;
+}
+.left {
+  left: -12rpx;
+}
+.right {
+  right: -12rpx;
+}
+.intro {
+  width: 590rpx;
+  margin-top: 20rpx;
+}
+.intro > view{
+  color: #999BA1;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  word-wrap: break-word;
+  margin-bottom: 8rpx;
+}
+.intro > .title {
+  font-size: 32rpx;
+  color: #191D21;
+  line-height: 50rpx;
+}

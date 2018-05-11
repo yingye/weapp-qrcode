@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "component-qrcode": "../components/qrcode/index"
+  }
+}

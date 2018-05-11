@@ -64,6 +64,7 @@ Type: Object
 | correctLevel | 非必须，二维码纠错级别，默认值为高级，取值：`{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
 | background | 非必须，二维码背景颜色，默认值白色 | '#ffffff' |
 | foreground | 非必须，二维码前景色，默认值黑色 | '#000000' |
+| _this | 非必须，若在组件中使用，需要传入，v0.7.0版本支持 | this |
 
 ## TIPS
 

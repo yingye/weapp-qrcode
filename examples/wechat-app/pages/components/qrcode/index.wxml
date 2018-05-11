@@ -1,0 +1,3 @@
+<view class="qrcode-components">
+  <canvas canvas-id="qrcodePro"></canvas>
+</view>
