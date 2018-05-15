@@ -33,7 +33,10 @@ Page({
       height: 200,
       canvasId: 'myQrcode',
       typeNumber: 10,
-      text: this.data.text
+      text: this.data.text,
+      callback(e) {
+        console.log('e: ', e)
+      }
     })
   }
 })
