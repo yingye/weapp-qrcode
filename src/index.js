@@ -4,7 +4,6 @@ import {
 } from './qrcode'
 
 function drawQrcode(options) {
-
   options = options || {}
   options = Object.assign({
     width: 256,
@@ -12,8 +11,7 @@ function drawQrcode(options) {
     typeNumber: -1,
     correctLevel: QRErrorCorrectLevel.H,
     background: '#ffffff',
-    foreground: '#000000',
-    callback(res) {}
+    foreground: '#000000'
   }, options)
 
   if (!options.canvasId) {
@@ -23,7 +21,7 @@ function drawQrcode(options) {
 
   createCanvas()
 
-  async function createCanvas() {
+  function createCanvas() {
 
     // create the qrcode itself
     var qrcode = new QRCode(options.typeNumber, options.correctLevel)
@@ -47,10 +45,10 @@ function drawQrcode(options) {
         ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h)
       }
     }
-    ctx.draw(false, function (e) {
-      options.callback(ctx)
-    })
 
+    ctx.draw(false, function(e) {
+      options.callback && options.callback(e)
+    })
   }
 }
 
