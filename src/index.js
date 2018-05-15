@@ -3,7 +3,7 @@ import {
   QRErrorCorrectLevel
 } from './qrcode'
 
-function drawQrcode(options) {
+function drawQrcode (options) {
   options = options || {}
   options = Object.assign({
     width: 256,
@@ -21,8 +21,7 @@ function drawQrcode(options) {
 
   createCanvas()
 
-  function createCanvas() {
-
+  function createCanvas () {
     // create the qrcode itself
     var qrcode = new QRCode(options.typeNumber, options.correctLevel)
     qrcode.addData(options.text)
@@ -46,7 +45,7 @@ function drawQrcode(options) {
       }
     }
 
-    ctx.draw(false, function(e) {
+    ctx.draw(false, function (e) {
       options.callback && options.callback(e)
     })
   }
