@@ -1,4 +1,7 @@
-import { QRCode, QRErrorCorrectLevel } from './qrcode'
+import {
+  QRCode,
+  QRErrorCorrectLevel
+} from './qrcode'
 
 function drawQrcode (options) {
   options = options || {}
@@ -41,7 +44,10 @@ function drawQrcode (options) {
         ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h)
       }
     }
-    ctx.draw()
+
+    ctx.draw(false, function (e) {
+      options.callback && options.callback(e)
+    })
   }
 }
 
