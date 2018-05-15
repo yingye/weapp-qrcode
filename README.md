@@ -65,6 +65,11 @@ Type: Object
 | background | 非必须，二维码背景颜色，默认值白色 | '#ffffff' |
 | foreground | 非必须，二维码前景色，默认值黑色 | '#000000' |
 | _this | 非必须，若在组件中使用，需要传入，v0.7.0版本支持 | this |
+| padding | 非必须，设定内边距值，默认值0 | 0 |
+| paddingLeft | 非必须，设定左内边距值，默认值0 | 0 |
+| paddingRight | 非必须，设定右内边距值，默认值0 | 0 |
+| paddingTop | 非必须，设定上内边距值，默认值0 | 0 |
+| paddingBottom | 非必须，设定下内边距值，默认值0 | 0 |
 
 ## TIPS
 
