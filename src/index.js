@@ -1,4 +1,7 @@
-import { QRCode, QRErrorCorrectLevel } from './qrcode'
+import {
+  QRCode,
+  QRErrorCorrectLevel
+} from './qrcode'
 
 //这里的utf16to8(str)是对Text中的字符串进行转码，让其支持中文
 function utf16to8(str) {
@@ -73,7 +76,10 @@ function drawQrcode (options) {
         ctx.fillRect(Math.round(col * tileW) + options.paddingLeft, Math.round(row * tileH) + options.paddingTop, w, h);
       }
     }
-    ctx.draw()
+
+    ctx.draw(false, function (e) {
+      options.callback && options.callback(e)
+    })
   }
 }
 

@@ -69,7 +69,8 @@ Type: Object
 | paddingLeft | 非必须，设定左内边距值，默认值0 | 0 |
 | paddingRight | 非必须，设定右内边距值，默认值0 | 0 |
 | paddingTop | 非必须，设定上内边距值，默认值0 | 0 |
-| paddingBottom | 非必须，设定下内边距值，默认值0 | 0 |
+| paddingBottom | 非必须，设定下内边距值，默认值0 | 0 
+| callback | 非必须，绘制完成后的回调函数，v0.8.0版本支持 | `function (e) { console.log('e', e) }` |
 
 ## TIPS
 

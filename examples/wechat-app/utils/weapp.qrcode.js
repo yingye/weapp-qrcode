@@ -1,11 +1,11 @@
 /**
- * weapp.qrcode.js v0.7.0 (https://github.com/yingye/weapp-qrcode#readme)
+ * weapp.qrcode.js v0.8.0 (https://github.com/yingye/weapp-qrcode#readme)
  */
 
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.drawQrcode = factory());
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.drawQrcode = factory());
 }(this, (function () { 'use strict';
 
 //---------------------------------------------------------------------
@@ -1114,7 +1114,10 @@ function drawQrcode(options) {
         ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h);
       }
     }
-    ctx.draw();
+
+    ctx.draw(false, function (e) {
+      options.callback && options.callback(e);
+    });
   }
 }
 
