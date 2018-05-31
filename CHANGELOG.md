@@ -2,6 +2,14 @@
 
 Change log for weapp-qrcode. [Details at Github](https://github.com/yingye/weapp-qrcode)
 
+## [0.9.0] - 2018-05-31
+
+- 支持绘制带中文的二维码.
+
+## [0.7.0] - 2018-05-15
+
+- 绘制二维码后添加回调函数.
+
 ## [0.7.0] - 2018-05-11
 
 - 支持在小程序组件中绘制二维码.

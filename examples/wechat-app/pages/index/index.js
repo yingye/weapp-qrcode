@@ -1,4 +1,4 @@
-import drawQrcode from '../../utils/weapp.qrcode.min.js'
+import drawQrcode from '../../utils/weapp.qrcode.js'
 
 Page({
   data: {
