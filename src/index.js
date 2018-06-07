@@ -52,17 +52,19 @@ function drawQrcode (options) {
     var ctx = options._this ? wx.createCanvasContext && wx.createCanvasContext(options.canvasId, options._this) : wx.createCanvasContext && wx.createCanvasContext(options.canvasId)
 
     // compute tileW/tileH based on options.width/options.height
-    var tileW = options.width / qrcode.getModuleCount()
-    var tileH = options.height / qrcode.getModuleCount()
+    var moduleCount = qrcode.getModuleCount()
+    var tileW = options.width / moduleCount
+    var tileH = options.height / moduleCount
 
-    // draw in the canvas
-    for (var row = 0; row < qrcode.getModuleCount(); row++) {
-      for (var col = 0; col < qrcode.getModuleCount(); col++) {
-        var style = qrcode.isDark(row, col) ? options.foreground : options.background
-        ctx.setFillStyle(style)
-        var w = (Math.ceil((col + 1) * tileW) - Math.floor(col * tileW))
-        var h = (Math.ceil((row + 1) * tileW) - Math.floor(row * tileW))
-        ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h)
+    ctx.setFillStyle(options.background)
+    ctx.fillRect(0, 0, options.width, options.height)
+
+    ctx.setFillStyle(options.foreground)
+    for (var row = 0; row < moduleCount; row++) {
+      for (var col = 0; col < moduleCount; col++) {
+        if (qrcode.isDark(row, col)) {
+          ctx.fillRect(col * tileW, row * tileH, tileW, tileH)
+        }
       }
     }
 
