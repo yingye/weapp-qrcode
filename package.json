@@ -5,9 +5,9 @@
   "main": "dist/weapp.qrcode.common.js",
   "module": "dist/weapp.qrcode.esm.js",
   "scripts": {
-    "dev": "rollup --config build/rollup.dev.config.js",
+    "dev": "rollup --config build/rollup.dev.config.js -w",
     "build": "rollup --config build/rollup.prod.config.js",
-    "publish": "npm run dev & npm run build",
+    "publish": "rollup --config build/rollup.dev.config.js & npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

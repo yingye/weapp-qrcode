@@ -10,10 +10,16 @@ var pkg = require('../package.json')
 
 module.exports = {
   input: path.resolve(__dirname, '../src/index.js'),
-  output: {
-    file: path.resolve(__dirname, '../dist/weapp.qrcode.js'),
-    format: 'umd'
-  },
+  output: [
+    {
+      file: path.resolve(__dirname, '../dist/weapp.qrcode.js'),
+      format: 'umd'
+    },
+    {
+      file: path.resolve(__dirname, '../examples/wechat-app/utils/weapp.qrcode.js'),
+      format: 'umd'
+    }
+  ],
   moduleName: 'drawQrcode',
   plugins: [
     eslint(),
