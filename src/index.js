@@ -1,3 +1,4 @@
+import extend from 'extend'
 import {
   QRCode,
   QRErrorCorrectLevel
@@ -26,7 +27,7 @@ function utf16to8 (str) {
 
 function drawQrcode (options) {
   options = options || {}
-  options = Object.assign({
+  options = extend(true, {
     width: 256,
     height: 256,
     x: 0,
@@ -34,7 +35,14 @@ function drawQrcode (options) {
     typeNumber: -1,
     correctLevel: QRErrorCorrectLevel.H,
     background: '#ffffff',
-    foreground: '#000000'
+    foreground: '#000000',
+    image: {
+      imageResource: '',
+      dx: 0,
+      dy: 0,
+      dWidth: 100,
+      dHeight: 100
+    }
   }, options)
 
   if (!options.canvasId) {
@@ -66,6 +74,10 @@ function drawQrcode (options) {
         var h = (Math.ceil((row + 1) * tileW) - Math.floor(row * tileW))
         ctx.fillRect(Math.round(col * tileW) + options.x, Math.round(row * tileH) + options.y, w, h)
       }
+    }
+
+    if (options.image.imageResource) {
+      ctx.drawImage(options.image.imageResource, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
     }
 
     ctx.draw(false, function (e) {
