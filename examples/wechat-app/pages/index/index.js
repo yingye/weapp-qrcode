@@ -29,11 +29,20 @@ Page({
   },
   draw () {
     drawQrcode({
-      width: 200,
-      height: 200,
+      width: 160,
+      height: 160,
+      x: 20,
+      y: 20,
       canvasId: 'myQrcode',
       typeNumber: 10,
       text: this.data.text,
+      image: {
+        imageResource: '../../images/icon.png',
+        dx: 70,
+        dy: 70,
+        dWidth: 60,
+        dHeight: 60
+      },
       callback(e) {
         console.log('e: ', e)
       }

@@ -43,5 +43,8 @@
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "extend": "^3.0.2"
   }
 }
