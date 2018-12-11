@@ -9,8 +9,9 @@
       <button type="default" size="{{defaultSize}}" bindtap="changeText">提交</button>
     </view>
     <view class="item">
-      <button type="default" size="{{defaultSize}}" bindtap="download">下载二维码</button>
-      <button type="default" size="{{defaultSize}}" bindtap="download">下载二维码</button>
+      <button type="default" size="{{defaultSize}}" bindtap="download">下载</button>
+      <button type="default" size="{{defaultSize}}" bindtap="repaint">设置x,y</button>
+      <button type="default" size="{{defaultSize}}" bindtap="getBase64Data">base64</button>
     </view>
     <view class="round left"></view>
     <view class="round right"></view>

@@ -3,9 +3,9 @@
  */
 
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.drawQrcode = factory());
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.drawQrcode = factory());
 }(this, (function () { 'use strict';
 
 //---------------------------------------------------------------------
@@ -1099,6 +1099,8 @@ function drawQrcode(options) {
   options = Object.assign({
     width: 256,
     height: 256,
+    x: 0,
+    y: 0,
     typeNumber: -1,
     correctLevel: QRErrorCorrectLevel.H,
     background: '#ffffff',
@@ -1132,7 +1134,7 @@ function drawQrcode(options) {
         ctx.setFillStyle(style);
         var w = Math.ceil((col + 1) * tileW) - Math.floor(col * tileW);
         var h = Math.ceil((row + 1) * tileW) - Math.floor(row * tileW);
-        ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h);
+        ctx.fillRect(Math.round(col * tileW) + options.x, Math.round(row * tileH) + options.y, w, h);
       }
     }
 
