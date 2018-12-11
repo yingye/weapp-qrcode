@@ -14,6 +14,14 @@ Page {
 .item {
   border-bottom: 2rpx solid #F4F5F7;
 }
+.item > button {
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  padding: 0 15rpx;
+  margin: 10rpx 20rpx 0 0;
+}
 .qrcode {
   width: 590rpx;
   margin: 0 auto;
