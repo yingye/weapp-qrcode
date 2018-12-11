@@ -1,0 +1,10 @@
+language: node_js
+sudo: required
+node_js:
+  - 10.0.0
+cache:
+  directories:
+    - node_modules
+script:
+    - ./deploy.sh
+branch: v1.0.0
