@@ -1,4 +1,8 @@
 # weapp-qrcode
+
+[![npm version](https://badge.fury.io/js/weapp-qrcode.svg)](https://badge.fury.io/js/weapp-qrcode)
+[![change-log](https://img.shields.io/badge/changelog-md-blue.svg)](https://github.com/yingye/weapp-qrcode/blob/master/CHANGELOG.md)
+
 weapp.qrcode.js 在 微信小程序 中，快速生成二维码
 
 ## Usage
