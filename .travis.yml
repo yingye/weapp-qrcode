@@ -5,8 +5,8 @@ node_js:
 cache:
   directories:
     - node_modules
-script:
-    - ./deploy.sh
-branch: v1.0.0
 before_install:
-  - chmod +x deploy.sh
+  - export TZ='Asia/Shanghai'  # 设置时区
+script:
+  - sh $TRAVIS_BUILD/deploy.sh
+branch: v1.0.0
