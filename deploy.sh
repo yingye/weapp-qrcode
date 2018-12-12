@@ -9,5 +9,6 @@ npm run publish
 git init
 git add -A
 git commit -m 'publish'
-​
+​git push -f https://${access_token}@github.com/yingye/yingye.github.io.git master
+
 cd -

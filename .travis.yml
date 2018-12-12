@@ -8,3 +8,5 @@ cache:
 script:
     - ./deploy.sh
 branch: v1.0.0
+before_install:
+  - chmod +x deploy.sh
