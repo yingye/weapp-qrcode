@@ -6,7 +6,18 @@ cache:
   directories:
     - node_modules
 before_install:
-  - export TZ='Asia/Shanghai'  # 设置时区
+  - export TZ='Asia/Shanghai'
+install:
+  - npm install
 script:
-  - sh $TRAVIS_BUILD/deploy.sh
+  - npm run publish
+
+after_script:
+  - git init
+  - git config user.name "${USER_NAME}"
+  - git config user.email "${USER_EMAIL}"
+  - git add .
+  - git commit -m "publish"
+  - git push https://${access_token}@github.com/yingye/weapp-qrcode v1.0.0
+
 branch: v1.0.0
