@@ -18,6 +18,6 @@ after_script:
   - git config user.email "${USER_EMAIL}"
   - git add .
   - git commit -m "publish"
-  - git push -f https://${access_token}@github.com/yingye/weapp-qrcode HEAD:travis
+  - git push -f https://${access_token}@github.com/yingye/weapp-qrcode HEAD:master
 
-branch: travis
+branch: master
