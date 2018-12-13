@@ -1,0 +1,23 @@
+language: node_js
+sudo: required
+node_js:
+  - 10.0.0
+cache:
+  directories:
+    - node_modules
+before_install:
+  - export TZ='Asia/Shanghai'
+install:
+  - npm install
+script:
+  - npm run publish
+
+after_script:
+  - git init
+  - git config user.name "${USER_NAME}"
+  - git config user.email "${USER_EMAIL}"
+  - git add .
+  - git commit -m "publish"
+  - git push -f https://${access_token}@github.com/yingye/weapp-qrcode HEAD:travis
+
+branch: travis
