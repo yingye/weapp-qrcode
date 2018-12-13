@@ -76,11 +76,11 @@ Type: Object
 | correctLevel | 非必须，二维码纠错级别，默认值为高级，取值：`{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
 | background | 非必须，二维码背景颜色，默认值白色 | '#ffffff' |
 | foreground | 非必须，二维码前景色，默认值黑色 | '#000000' |
-| _this | 非必须，若在组件中使用，需要传入，v0.7.0版本支持 | this |
-| callback | 非必须，绘制完成后的回调函数，v0.8.0版本支持 | `function (e) { console.log('e', e) }` |
-| x | 非必须，二维码绘制的 x 轴起始位置，默认值0 | 100 |
-| y | 非必须，二维码绘制的 y 轴起始位置，默认值0 | 100 |
-| image | 非必须，在 canvas 上绘制图片，**层级高于二维码**，v1.0.0版本支持，更多可参考[drawImage](https://developers.weixin.qq.com/miniprogram/dev/api/CanvasContext.drawImage.html) | { imageResource: '', dx: 0, dy: 0, dWidth: 100, dHeight: 100 } |
+| _this | 非必须，若在组件中使用，需要传入，v0.7.0+版本支持 | this |
+| callback | 非必须，绘制完成后的回调函数，v0.8.0+版本支持 | `function (e) { console.log('e', e) }` |
+| x | 非必须，二维码绘制的 x 轴起始位置，默认值0，v1.0.0+版本支持 | 100 |
+| y | 非必须，二维码绘制的 y 轴起始位置，默认值0，v1.0.0+版本支持 | 100 |
+| image | 非必须，在 canvas 上绘制图片，**层级高于二维码**，v1.0.0+版本支持，更多可参考[drawImage](https://developers.weixin.qq.com/miniprogram/dev/api/CanvasContext.drawImage.html) | { imageResource: '', dx: 0, dy: 0, dWidth: 100, dHeight: 100 } |
 
 **位置信息可以参见下图：**
 
