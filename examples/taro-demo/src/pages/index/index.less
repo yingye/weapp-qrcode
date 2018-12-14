@@ -1,0 +1,121 @@
+
+Page {
+  background-color: #383c42;
+}
+.container {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+
+  .main {
+    box-sizing: border-box;
+    box-shadow: 0 0 2px 0 rgba(25, 29, 33, 0.15);
+
+    position: relative;
+
+    width: 670px;
+    margin: 40px auto 0;
+    padding: 0 40px;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    .item {
+      border-bottom: 2px solid #F4F5F7;
+    }
+  }
+}
+.qrcode {
+  width: 590px;
+  margin: 0 auto;
+  padding: 50px 0 59px;
+  border-top: 2px solid #F4F5F7;
+
+  text-align: center;
+
+  .scanCode {
+    width: 400px;
+    height: 400px;
+
+    margin: 58px auto 0;
+  }
+
+  .tips {
+    margin-top: 40px;
+
+    font-size: 24px;
+    color: #999BA1;
+    line-height: 28px;
+  }
+}
+.input-container {
+  padding: 10px 0 0 0;
+  width: 590px;
+  margin: 0 auto;
+  height: 102px;
+
+  > input {
+    display: inline-block;
+
+    width: 450px;
+    height: 80px;
+
+    font-size: 28px;
+    color: #191D21;
+    line-height: 102px;
+  }
+
+  > button {
+    width: 120px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+  }
+}
+.round {
+  position: absolute;
+  top: 735px;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background-color: #383c42;
+
+  &.left {
+    left: -12px;
+  }
+
+  &.right {
+    right: -12px;
+  }
+}
+.intro {
+  width: 590px;
+  margin-top: 20px;
+
+  > view{
+    margin-bottom: 8px;
+
+    color: #999BA1;
+    font-size: 28px;
+    line-height: 48px;
+    word-wrap: break-word;
+  }
+
+  .title {
+    font-size: 32px;
+    color: #191D21;
+    line-height: 50px;
+  }
+}

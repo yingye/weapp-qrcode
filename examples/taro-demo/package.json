@@ -1,0 +1,48 @@
+{
+  "name": "taro-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This is a project for weapp-qrcode",
+  "main": "index.js",
+  "scripts": {
+    "build:weapp": "taro build --type weapp",
+    "build:h5": "taro build --type h5",
+    "build:rn": "taro build --type rn",
+    "dev:weapp": "npm run build:weapp -- --watch",
+    "dev:h5": "npm run build:h5 -- --watch",
+    "dev:rn": "npm run build:rn -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@tarojs/async-await": "^1.2.0-beta.14",
+    "@tarojs/components": "^1.0.2",
+    "@tarojs/router": "^1.0.2",
+    "@tarojs/taro": "^1.0.2",
+    "@tarojs/taro-h5": "^1.0.2",
+    "@tarojs/taro-weapp": "^1.0.2",
+    "nervjs": "^1.3.0",
+    "weapp-qrcode": "^0.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "16.3.14",
+    "@types/webpack-env": "^1.13.6",
+    "@tarojs/plugin-babel": "^1.0.2",
+    "@tarojs/plugin-csso": "^1.0.2",
+    "@tarojs/plugin-less": "^1.0.2",
+    "@tarojs/plugin-uglifyjs": "^1.0.2",
+    "@tarojs/webpack-runner": "^1.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-jsx-stylesheet": "^0.6.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-taro": "^1.0.2",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-taro": "^1.0.2"
+  }
+}

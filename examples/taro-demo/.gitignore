@@ -1,0 +1,9 @@
+dist/
+.temp/
+.rn_temp/
+node_modules/
+npm-debug.log
+npm-debug.log.*
+.DS_Store
+.idea/
+package-lock.json
