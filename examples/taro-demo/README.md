@@ -50,10 +50,16 @@ async componentDidMount() {
 1. 将项目clone到本地
 
 ```
-git clone ....
+git clone https://github.com/yingye/weapp-qrcode.git
 ```
 
-2. 安装项目依赖
+2. 进入 examples/taro-demo 目录
+
+```
+cd examples/taro-demo
+```
+
+3. 安装项目依赖
 
 进入到对应的项目目录，安装对应的依赖
 
@@ -61,7 +67,7 @@ git clone ....
 npm install
 ```
 
-3. 预览
+4. 预览
 
 选择微信小程序模式，需要自行下载并打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，然后选择项目根目录进行预览。详情请参考：[Taro官方文档](https://nervjs.github.io/taro/docs/GETTING-STARTED.html)。
 
