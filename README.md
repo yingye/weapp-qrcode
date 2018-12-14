@@ -58,6 +58,8 @@ drawQrcode({
 
 <img src="./examples/demo.jpg" width=300 >
 
+更多 demo 可以参考 [examples目录](https://github.com/yingye/weapp-qrcode/tree/master/examples)，示例包含原生语法及WePY、mpvue、Taro框架。
+
 ## API
 
 ### drawQrcode([options])
