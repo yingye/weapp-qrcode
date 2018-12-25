@@ -86,9 +86,7 @@ function drawQrcode (options) {
     }
 
     ctx.draw(false, function (e) {
-      setTimeout(() => {
-        options.callback && options.callback(e)
-      }, 100);
+      options.callback && options.callback(e)
     })
   }
 }
