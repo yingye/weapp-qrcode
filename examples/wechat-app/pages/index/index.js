@@ -34,6 +34,7 @@ Page({
       x: 20,
       y: 20,
       canvasId: 'myQrcode',
+      // ctx: wx.createCanvasContext('myQrcode'),
       typeNumber: 10,
       text: this.data.text,
       image: {
