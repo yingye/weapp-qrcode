@@ -2,6 +2,15 @@
 
 Change log for weapp-qrcode. [Details at Github](https://github.com/yingye/weapp-qrcode)
 
+## [1.0.0] - 2018-12-25
+
+- 支持传入绘图上下文(CanvasContext).
+
+## [1.0.0-beta] - 2018-12-13
+
+- 支持二维码在 canvas 上绘制的起始位置.
+- 支持在二维码上绘制图片及绘制位置.
+
 ## [0.9.0] - 2018-05-31
 
 - 支持绘制带中文的二维码.

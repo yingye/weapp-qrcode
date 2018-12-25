@@ -25,6 +25,7 @@ drawQrcode({
   width: 200,
   height: 200,
   canvasId: 'myQrcode',
+  // ctx: wx.createCanvasContext('myQrcode'),
   text: 'https://github.com/yingye',
   // v1.0.0+版本支持在二维码上绘制图片
   image: {
@@ -72,17 +73,19 @@ Type: Object
 | ------ | ------ | ------ |
 | width | 必须，二维码宽度，与`canvas`的`width`保持一致 | 200 |
 | height | 必须，二维码高度，与`canvas`的`height`保持一致 | 200 |
-| canvasId | 必须，绘制的`canvasId` | 'myQrcode' |
+| canvasId | 非必须，绘制的`canvasId` | `'myQrcode'` |
+| ctx | 非必须，绘图上下文，可通过 `wx.createCanvasContext('canvasId')` 获取，v1.0.0+版本支持 | `'wx.createCanvasContext('canvasId')'` |
 | text | 必须，二维码内容 | 'https://github.com/yingye' |
 | typeNumber | 非必须，二维码的计算模式，默认值-1 | 8 |
 | correctLevel | 非必须，二维码纠错级别，默认值为高级，取值：`{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
-| background | 非必须，二维码背景颜色，默认值白色 | '#ffffff' |
-| foreground | 非必须，二维码前景色，默认值黑色 | '#000000' |
+| background | 非必须，二维码背景颜色，默认值白色 | `'#ffffff'` |
+| foreground | 非必须，二维码前景色，默认值黑色 | `'#000000'` |
 | _this | 非必须，若在组件中使用，需要传入，v0.7.0+版本支持 | this |
-| callback | 非必须，绘制完成后的回调函数，v0.8.0+版本支持 | `function (e) { console.log('e', e) }` |
+| callback | 非必须，绘制完成后的回调函数，v0.8.0+版本支持。安卓手机兼容性问题，可通过自行设置计时器来解决，更多可以参考 [issue #18](https://github.com/yingye/weapp-qrcode/issues/18) | `function (e) { console.log('e', e) }` |
 | x | 非必须，二维码绘制的 x 轴起始位置，默认值0，v1.0.0+版本支持 | 100 |
 | y | 非必须，二维码绘制的 y 轴起始位置，默认值0，v1.0.0+版本支持 | 100 |
-| image | 非必须，在 canvas 上绘制图片，**层级高于二维码**，v1.0.0+版本支持，更多可参考[drawImage](https://developers.weixin.qq.com/miniprogram/dev/api/CanvasContext.drawImage.html) | { imageResource: '', dx: 0, dy: 0, dWidth: 100, dHeight: 100 } |
+| image | 非必须，在 canvas 上绘制图片，**层级高于二维码**，v1.0.0+版本支持，更多可参考[drawImage](https://developers.weixin.qq.com/miniprogram/dev/api/CanvasContext.drawImage.html) | `{ imageResource: '', dx: 0, dy: 0, dWidth: 100, dHeight: 100 }` |
+
 
 **位置信息可以参见下图：**
 
