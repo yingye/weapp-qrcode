@@ -59,11 +59,11 @@ function drawQrcode (options) {
     qrcode.make()
 
     // get canvas context
-    var ctx;
+    var ctx
     if (options.ctx) {
-      ctx = options.ctx;
+      ctx = options.ctx
     } else {
-      ctx = options._this ? wx.createCanvasContext && wx.createCanvasContext(options.canvasId, options._this) : wx.createCanvasContext && wx.createCanvasContext(options.canvasId);
+      ctx = options._this ? wx.createCanvasContext && wx.createCanvasContext(options.canvasId, options._this) : wx.createCanvasContext && wx.createCanvasContext(options.canvasId)
     }
 
     // compute tileW/tileH based on options.width/options.height
