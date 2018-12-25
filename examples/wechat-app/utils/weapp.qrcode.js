@@ -1,5 +1,5 @@
 /**
- * weapp.qrcode.js v1.0.0-beta (https://github.com/yingye/weapp-qrcode#readme)
+ * weapp.qrcode.js v1.0.0 (https://github.com/yingye/weapp-qrcode#readme)
  */
 
 (function (global, factory) {
