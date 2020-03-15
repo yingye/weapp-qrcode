@@ -76,7 +76,7 @@ Type: Object
 | canvasId | 非必须，绘制的`canvasId` | `'myQrcode'` |
 | ctx | 非必须，绘图上下文，可通过 `wx.createCanvasContext('canvasId')` 获取，v1.0.0+版本支持 | `'wx.createCanvasContext('canvasId')'` |
 | text | 必须，二维码内容 | 'https://github.com/yingye' |
-| typeNumber | 非必须，二维码的计算模式，默认值-1 | 8 |
+| typeNumber | 非必须，二维码的计算模式，值越大允许的二维码内容越多，默认值-1（根据内容自动判断） | 8 |
 | correctLevel | 非必须，二维码纠错级别，默认值为高级，取值：`{ L: 1, M: 0, Q: 3, H: 2 }` | 1 |
 | background | 非必须，二维码背景颜色，默认值白色 | `'#ffffff'` |
 | foreground | 非必须，二维码前景色，默认值黑色 | `'#000000'` |
@@ -90,6 +90,12 @@ Type: Object
 **位置信息可以参见下图：**
 
 <image src="./examples/api.png" width=500 height=500>
+
+## Q&A
+
+### 报错 `code length overflow`，或二维码过于稠密扫描不出来。
+
+请修改 typeNumber 和 correctLevel 参数。
 
 ## TIPS
 
