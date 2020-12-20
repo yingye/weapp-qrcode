@@ -42,7 +42,8 @@ function drawQrcode (options) {
       dy: 0,
       dWidth: 100,
       dHeight: 100
-    }
+    },
+    draw: true
   }, options)
 
   if (!options.canvasId && !options.ctx) {
@@ -85,9 +86,11 @@ function drawQrcode (options) {
       ctx.drawImage(options.image.imageResource, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
     }
 
-    ctx.draw(false, function (e) {
-      options.callback && options.callback(e)
-    })
+    if (options.draw) {
+      ctx.draw(false, function (e) {
+        options.callback && options.callback(e)
+      })
+    }
   }
 }
 
