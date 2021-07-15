@@ -42,7 +42,8 @@ Page({
         dx: 70,
         dy: 70,
         dWidth: 60,
-        dHeight: 60
+        dHeight: 60,
+        radius: 12,
       },
       callback(e) {
         console.log('e: ', e)

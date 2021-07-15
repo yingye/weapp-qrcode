@@ -82,13 +82,36 @@ function drawQrcode (options) {
     }
 
     if (options.image.imageResource) {
+      ctx.save()
+      if (options.image.radius && options.image.radius > 0) {
+        // draw radius
+        drawRRect(ctx, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight, options.image.radius)
+        ctx.clip()
+      }
       ctx.drawImage(options.image.imageResource, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
+      ctx.restore()
     }
 
     ctx.draw(false, function (e) {
       options.callback && options.callback(e)
     })
   }
+}
+
+function drawRRect (ctx, x = 0, y = 0, width = 0, height = 0, radius = 0) {
+  if (width < 2 * radius) {
+    radius = width / 2
+  }
+  if (height < 2 * radius) {
+    radius = height / 2
+  }
+  ctx.beginPath()
+  ctx.moveTo(x + radius, y)
+  ctx.arcTo(x + width, y, x + width, y + height, radius)
+  ctx.arcTo(x + width, y + height, x, y + height, radius)
+  ctx.arcTo(x, y + height, x, y, radius)
+  ctx.arcTo(x, y, x + width, y, radius)
+  ctx.closePath()
 }
 
 export default drawQrcode
