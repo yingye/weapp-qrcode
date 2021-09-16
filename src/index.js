@@ -74,7 +74,16 @@ function drawQrcode (options) {
     for (var row = 0; row < qrcode.getModuleCount(); row++) {
       for (var col = 0; col < qrcode.getModuleCount(); col++) {
         var style = qrcode.isDark(row, col) ? options.foreground : options.background
-        ctx.setFillStyle(style)
+        // From WeChat MiniProgram base library 1.9.90 and later, maintenance has been discontinued for this API
+        // https://developers.weixin.qq.com/miniprogram/en/dev/api/canvas/CanvasContext.setFillStyle.html
+        if (ctx.setFillStyle) { 
+          ctx.setFillStyle(style)
+        } else {
+          // Start from base library version 1.9.90. 
+          // https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.html
+          ctx.fillStyle = style
+        }
+        
         var w = (Math.ceil((col + 1) * tileW) - Math.floor(col * tileW))
         var h = (Math.ceil((row + 1) * tileW) - Math.floor(row * tileW))
         ctx.fillRect(Math.round(col * tileW) + options.x, Math.round(row * tileH) + options.y, w, h)
@@ -85,9 +94,15 @@ function drawQrcode (options) {
       ctx.drawImage(options.image.imageResource, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
     }
 
-    ctx.draw(false, function (e) {
-      options.callback && options.callback(e)
-    })
+    var callbackHandle = function (e) {
+      options.callback && options.callback(e);
+    }
+    // RenderingContext without draw function
+    if (ctx.draw) {
+      ctx.draw(false, callbackHandle);
+    } else {
+      callbackHandle()
+    }
   }
 }
 
