@@ -100,18 +100,18 @@ function drawQrcode(options) {
       const image = options.canvas.createImage()
       image.onload = () => {
         ctx.drawImage(image, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
+
+        var callbackHandle = function (e) {
+          options.callback && options.callback(e)
+        }
+        // RenderingContext without draw function
+        if (ctx.draw) {
+          ctx.draw(false, callbackHandle)
+        } else {
+          callbackHandle()
+        }
       }
       image.src = options.image.imageResource
-    }
-
-    var callbackHandle = function (e) {
-      options.callback && options.callback(e)
-    }
-    // RenderingContext without draw function
-    if (ctx.draw) {
-      ctx.draw(false, callbackHandle)
-    } else {
-      callbackHandle()
     }
   }
 }
