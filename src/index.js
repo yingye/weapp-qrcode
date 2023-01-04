@@ -28,6 +28,7 @@ function utf16to8(str) {
 function drawQrcode(options) {
   options = options || {}
   options = extend(true, {
+    canvas: null,
     width: 256,
     height: 256,
     x: 0,
@@ -42,8 +43,7 @@ function drawQrcode(options) {
       dy: 0,
       dWidth: 100,
       dHeight: 100
-    },
-    canvas: null
+    }
   }, options)
 
   if (!options.ctx) {
@@ -64,7 +64,12 @@ function drawQrcode(options) {
     if (options.ctx) {
       ctx = options.ctx
     } else {
-      console.warn('please set ctx!')
+      console.error('please set ctx!')
+      return
+    }
+    if (!options.canvas) {
+      console.error('please set canvas!')
+      return
     }
 
     // compute tileW/tileH based on options.width/options.height
@@ -94,7 +99,7 @@ function drawQrcode(options) {
     if (options.image.imageResource) {
       const image = options.canvas.createImage()
       image.onload = () => {
-        ctx.drawImage(options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
+        ctx.drawImage(image, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
       }
       image.src = options.image.imageResource
     }
