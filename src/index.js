@@ -5,7 +5,7 @@ import {
 } from './qrcode'
 
 // support Chinese
-function utf16to8 (str) {
+function utf16to8(str) {
   var out, i, len, c
   out = ''
   len = str.length
@@ -25,7 +25,7 @@ function utf16to8 (str) {
   return out
 }
 
-function drawQrcode (options) {
+function drawQrcode(options) {
   options = options || {}
   options = extend(true, {
     width: 256,
@@ -42,17 +42,18 @@ function drawQrcode (options) {
       dy: 0,
       dWidth: 100,
       dHeight: 100
-    }
+    },
+    canvas: null
   }, options)
 
-  if (!options.canvasId && !options.ctx) {
-    console.warn('please set canvasId or ctx!')
+  if (!options.ctx) {
+    console.warn('please set ctx!')
     return
   }
 
   createCanvas()
 
-  function createCanvas () {
+  function createCanvas() {
     // create the qrcode itself
     var qrcode = new QRCode(options.typeNumber, options.correctLevel)
     qrcode.addData(utf16to8(options.text))
@@ -63,7 +64,7 @@ function drawQrcode (options) {
     if (options.ctx) {
       ctx = options.ctx
     } else {
-      ctx = options._this ? wx.createCanvasContext && wx.createCanvasContext(options.canvasId, options._this) : wx.createCanvasContext && wx.createCanvasContext(options.canvasId)
+      console.warn('please set ctx!')
     }
 
     // compute tileW/tileH based on options.width/options.height
@@ -76,14 +77,14 @@ function drawQrcode (options) {
         var style = qrcode.isDark(row, col) ? options.foreground : options.background
         // From WeChat MiniProgram base library 1.9.90 and later, maintenance has been discontinued for this API
         // https://developers.weixin.qq.com/miniprogram/en/dev/api/canvas/CanvasContext.setFillStyle.html
-        if (ctx.setFillStyle) { 
+        if (ctx.setFillStyle) {
           ctx.setFillStyle(style)
         } else {
-          // Start from base library version 1.9.90. 
+          // Start from base library version 1.9.90.
           // https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.html
           ctx.fillStyle = style
         }
-        
+
         var w = (Math.ceil((col + 1) * tileW) - Math.floor(col * tileW))
         var h = (Math.ceil((row + 1) * tileW) - Math.floor(row * tileW))
         ctx.fillRect(Math.round(col * tileW) + options.x, Math.round(row * tileH) + options.y, w, h)
@@ -91,15 +92,19 @@ function drawQrcode (options) {
     }
 
     if (options.image.imageResource) {
-      ctx.drawImage(options.image.imageResource, options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
+      const image = options.canvas.createImage()
+      image.onload = () => {
+        ctx.drawImage(options.image.dx, options.image.dy, options.image.dWidth, options.image.dHeight)
+      }
+      image.src = options.image.imageResource
     }
 
     var callbackHandle = function (e) {
-      options.callback && options.callback(e);
+      options.callback && options.callback(e)
     }
     // RenderingContext without draw function
     if (ctx.draw) {
-      ctx.draw(false, callbackHandle);
+      ctx.draw(false, callbackHandle)
     } else {
       callbackHandle()
     }
